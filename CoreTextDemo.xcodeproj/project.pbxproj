@@ -15,6 +15,10 @@
 		C4497AF326FDE7A7001B66B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4497AF126FDE7A7001B66B4 /* LaunchScreen.storyboard */; };
 		C4497AFE26FDE7A8001B66B4 /* CoreTextDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497AFD26FDE7A8001B66B4 /* CoreTextDemoTests.swift */; };
 		C4497B0926FDE7A8001B66B4 /* CoreTextDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B0826FDE7A8001B66B4 /* CoreTextDemoUITests.swift */; };
+		C4497B1726FDE9F2001B66B4 /* SimpleDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */; };
+		C4497B1926FDF5AE001B66B4 /* ImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1826FDF5AE001B66B4 /* ImageText.swift */; };
+		C4497B1B26FEC082001B66B4 /* TruncateDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */; };
+		C4BC42B22702C73500B87AFF /* CTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC42B12702C73500B87AFF /* CTImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		C4497B0426FDE7A8001B66B4 /* CoreTextDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTextDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4497B0826FDE7A8001B66B4 /* CoreTextDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTextDemoUITests.swift; sourceTree = "<group>"; };
 		C4497B0A26FDE7A8001B66B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDraw.swift; sourceTree = "<group>"; };
+		C4497B1826FDF5AE001B66B4 /* ImageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageText.swift; sourceTree = "<group>"; };
+		C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncateDraw.swift; sourceTree = "<group>"; };
+		C4BC42B12702C73500B87AFF /* CTImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				C4497AEF26FDE7A7001B66B4 /* Assets.xcassets */,
 				C4497AF126FDE7A7001B66B4 /* LaunchScreen.storyboard */,
 				C4497AF426FDE7A7001B66B4 /* Info.plist */,
+				C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */,
+				C4497B1826FDF5AE001B66B4 /* ImageText.swift */,
+				C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */,
+				C4BC42B12702C73500B87AFF /* CTImageView.swift */,
 			);
 			path = CoreTextDemo;
 			sourceTree = "<group>";
@@ -258,9 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4497B1926FDF5AE001B66B4 /* ImageText.swift in Sources */,
 				C4497AEB26FDE7A4001B66B4 /* ViewController.swift in Sources */,
 				C4497AE726FDE7A4001B66B4 /* AppDelegate.swift in Sources */,
+				C4BC42B22702C73500B87AFF /* CTImageView.swift in Sources */,
+				C4497B1B26FEC082001B66B4 /* TruncateDraw.swift in Sources */,
 				C4497AE926FDE7A4001B66B4 /* SceneDelegate.swift in Sources */,
+				C4497B1726FDE9F2001B66B4 /* SimpleDraw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
