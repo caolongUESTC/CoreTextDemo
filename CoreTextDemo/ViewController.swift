@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         return img
     }()
     
+    lazy var moreText: MoreText = {
+        let more = MoreText()
+        more.backgroundColor = .white
+        return more
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,11 +43,13 @@ class ViewController: UIViewController {
         view.addSubview(simple)
         view.addSubview(truncate)
         view.addSubview(imageLabel)
+        view.addSubview(moreText)
     }
     private func viewsLayout() {
         simple.frame = CGRect(x: 20, y: 60, width: 100, height: 40)
         truncate.frame = CGRect(x: 20, y: 100, width: 100, height: 40)
-        imageLabel.frame = CGRect(x: 20, y: 140, width: 320, height: 280)
+        imageLabel.frame = CGRect(x: 20, y: 140, width: 100, height: 40)
+        moreText.frame = CGRect(x: 20, y: 180, width: 100, height: 60)
     }
 }
 
