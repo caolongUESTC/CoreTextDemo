@@ -18,7 +18,8 @@
 		C4497B1726FDE9F2001B66B4 /* SimpleDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */; };
 		C4497B1926FDF5AE001B66B4 /* ImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1826FDF5AE001B66B4 /* ImageText.swift */; };
 		C4497B1B26FEC082001B66B4 /* TruncateDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */; };
-		C4BC42B22702C73500B87AFF /* CTImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC42B12702C73500B87AFF /* CTImageView.swift */; };
+		C4BC449E2703262D00B87AFF /* ClickText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC449D2703262D00B87AFF /* ClickText.swift */; };
+		C4DE640827040A5C00B8CA2C /* TextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE640727040A5C00B8CA2C /* TextLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDraw.swift; sourceTree = "<group>"; };
 		C4497B1826FDF5AE001B66B4 /* ImageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageText.swift; sourceTree = "<group>"; };
 		C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncateDraw.swift; sourceTree = "<group>"; };
-		C4BC42B12702C73500B87AFF /* CTImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTImageView.swift; sourceTree = "<group>"; };
+		C4BC449D2703262D00B87AFF /* ClickText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickText.swift; sourceTree = "<group>"; };
+		C4DE640727040A5C00B8CA2C /* TextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,8 @@
 				C4497B1626FDE9F2001B66B4 /* SimpleDraw.swift */,
 				C4497B1826FDF5AE001B66B4 /* ImageText.swift */,
 				C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */,
-				C4BC42B12702C73500B87AFF /* CTImageView.swift */,
+				C4BC449D2703262D00B87AFF /* ClickText.swift */,
+				C4DE640727040A5C00B8CA2C /* TextLine.swift */,
 			);
 			path = CoreTextDemo;
 			sourceTree = "<group>";
@@ -273,10 +276,11 @@
 				C4497B1926FDF5AE001B66B4 /* ImageText.swift in Sources */,
 				C4497AEB26FDE7A4001B66B4 /* ViewController.swift in Sources */,
 				C4497AE726FDE7A4001B66B4 /* AppDelegate.swift in Sources */,
-				C4BC42B22702C73500B87AFF /* CTImageView.swift in Sources */,
 				C4497B1B26FEC082001B66B4 /* TruncateDraw.swift in Sources */,
+				C4BC449E2703262D00B87AFF /* ClickText.swift in Sources */,
 				C4497AE926FDE7A4001B66B4 /* SceneDelegate.swift in Sources */,
 				C4497B1726FDE9F2001B66B4 /* SimpleDraw.swift in Sources */,
+				C4DE640827040A5C00B8CA2C /* TextLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

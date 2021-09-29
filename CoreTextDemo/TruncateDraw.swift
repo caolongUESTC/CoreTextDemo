@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 
 class TruncateDraw: UIView {
+    var drawFrame: CTFrame?
+    
     var dataSouce: NSMutableAttributedString {
-        let str = NSMutableAttributedString(string: "测试 \n这是第二行， 第二行的长度非常非常非常的长 ")
-        str.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location: 12, length: 2))
+        let str = NSMutableAttributedString(string: "测试\n这是第二行，第二行的长度非常非常非常的长 ")
+        str.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location: 11, length: 2))
+        str.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14), range: NSRange(location: 0, length: str.length))
         return str
     }
     
@@ -23,6 +26,7 @@ class TruncateDraw: UIView {
         graphicContext.scaleBy(x: 1.0, y: -1.0); //将y轴坐标轴翻转
         
         truncate(rect: rect, context: graphicContext)
+        
     }
     private func truncate(rect: CGRect, context: CGContext) {
         let layoutFrame = generateCTFrame(rect: rect)
@@ -84,6 +88,16 @@ class TruncateDraw: UIView {
         path.addRect(rect)
         let storage = CTFramesetterCreateWithAttributedString(dataSouce)
         let layoutFrame = CTFramesetterCreateFrame(storage, CFRangeMake(0, dataSouce.length), path, nil)
+        drawFrame = layoutFrame
         return layoutFrame
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        guard let ctframe = drawFrame, let point = touches.first?.location(in: self) else {return}
+        let index = CoreTextUtil.convert(point: point, ctFrame: ctframe)
+        print("位置：\(point.x) \(point.y) 索引：\(index)")
+        guard index >= 0 else {return} //小于零说明没有找到对应位置
+        let target = dataSouce.attributedSubstring(from: NSRange(location: max(index-1, 0), length: 1))
     }
 }

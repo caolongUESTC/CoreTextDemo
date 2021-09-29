@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class ImageText: UIView {
+    private var drawFrame: CTFrame?
     var imgName: String = "homeIcon"
     static let imageFont: UIFont = UIFont.systemFont(ofSize: 15)
     static let textImageHeight: CGFloat = imageFont.lineHeight
@@ -54,7 +55,7 @@ class ImageText: UIView {
         dataSouce.insert(generateImageStr(), at: 2) //可以写入任意位置
         let storage = CTFramesetterCreateWithAttributedString(dataSouce)
         let layoutFrame = CTFramesetterCreateFrame(storage, CFRangeMake(0, dataSouce.length), path, nil)
-       
+        drawFrame = layoutFrame
         CTFrameDraw(layoutFrame, context)
         
         drawImageInText(layoutFrame: layoutFrame, context: context)
@@ -109,5 +110,15 @@ class ImageText: UIView {
         imgStr.addAttribute(NSAttributedString.Key(rawValue: "imgName"), value: imgName, range: NSRange(location: 0, length: 1))
         //用于处理一个当有多个图片同时放置到一行的情况。需要通过imgName进行区分
         return imgStr
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        guard let ctframe = drawFrame, let point = touches.first?.location(in: self) else {return}
+        let index = CoreTextUtil.convert(point: point, ctFrame: ctframe)
+        guard index >= 0 else {return} //小于零说明没有找到对应位置
+        let target = dataSouce.attributedSubstring(from: NSRange(location: index, length: 1))
+        print("\(target)")
     }
 }
