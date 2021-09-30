@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MoreText: UIView {
+    var tapMoreBlock: (() -> Void)?
     private var drawFrame: CTFrame?
     private var truncateTokenIndex: Int?
     let moreGaping: CGFloat = 4
@@ -105,10 +106,9 @@ class MoreText: UIView {
         super.touchesBegan(touches, with: event)
         guard let ctframe = drawFrame, let point = touches.first?.location(in: self) else {return}
         let index = CoreTextUtil.convert(point: point, ctFrame: ctframe)
-        print("位置：\(point.x) \(point.y) 索引：\(index)")
         guard index >= 0, let truncateTokenIndex = truncateTokenIndex else {return} //小于零说明没有找到对应位置
         if index > truncateTokenIndex {
-            print ("点击了更多")
+            tapMoreBlock?()
         }
     }
 }

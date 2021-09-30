@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     lazy var simple: SimpleDraw = {
         let simple = SimpleDraw()
-        simple.backgroundColor = .white
+        simple.backgroundColor = .blue
         return simple
     }()
     
@@ -29,8 +29,13 @@ class ViewController: UIViewController {
     lazy var moreText: MoreText = {
         let more = MoreText()
         more.backgroundColor = .white
+        more.tapMoreBlock = { [weak self] in
+            guard let self = self else {return}
+            self.reLayoutMoreLabel()
+        }
         return more
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +51,15 @@ class ViewController: UIViewController {
         view.addSubview(moreText)
     }
     private func viewsLayout() {
-        simple.frame = CGRect(x: 20, y: 60, width: 100, height: 40)
-        truncate.frame = CGRect(x: 20, y: 100, width: 100, height: 40)
-        imageLabel.frame = CGRect(x: 20, y: 140, width: 100, height: 40)
-        moreText.frame = CGRect(x: 20, y: 180, width: 100, height: 60)
+        simple.frame = CGRect(x: 20, y: 60, width: 200, height: 100)
+        truncate.frame = CGRect(x: 20, y: simple.frame.maxY, width: 100, height: 40)
+        imageLabel.frame = CGRect(x: 20, y: truncate.frame.maxY, width: 100, height: 40)
+        moreText.frame = CGRect(x: 20, y: imageLabel.frame.maxY, width: 100, height: 60)
+    }
+    
+    private func reLayoutMoreLabel() {
+        moreText.frame = CGRect(x: 20, y: imageLabel.frame.maxY, width: 100, height: 200)
+        moreText.setNeedsDisplay()
     }
 }
 

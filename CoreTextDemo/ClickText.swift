@@ -39,7 +39,7 @@ class CoreTextUtil {
             let lineFrame = CGRect(x: lineOrigins[index].x, y: drawHeight - lineOrigins[index].y - lineFrag.ascent, width: lineWidth, height: lineFrag.ascent + lineFrag.descent + lineFrag.leading)
             let adjustPoint = CGPoint(x: point.x - lineFrame.minX,y: point.y)
             if lineFrame.contains(adjustPoint) {
-                return  CTLineGetStringIndexForPosition(line, adjustPoint) //有半个误差长度。对于图片来说 基本是不可以接受的。
+                return  CTLineGetStringIndexForPosition(line, adjustPoint) //有半个误差长度。
             }
         }
         return -1

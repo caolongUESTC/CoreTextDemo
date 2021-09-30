@@ -10,7 +10,11 @@ import UIKit
 
 class SimpleDraw: UIView {
     var dataSouce: NSMutableAttributedString {
-        return NSMutableAttributedString(string: "测试 \n这是第二行， 第二行的长度非常非常非常的长 ")
+        var source: String = ""
+        for index in 0..<100 {
+            source = "\(source)\(index)"
+        }
+        return NSMutableAttributedString(string: source, attributes: [NSAttributedString.Key.backgroundColor: UIColor.yellow.cgColor])
     }
     
     
@@ -22,7 +26,8 @@ class SimpleDraw: UIView {
         graphicContext.scaleBy(x: 1.0, y: -1.0); //将y轴坐标轴翻转
         
 //        normalDraw(context: graphicContext, rect: rect)
-        lineDraw(context: graphicContext, rect: rect)
+//        lineDraw(context: graphicContext, rect: rect)
+        ellipseDraw(context: graphicContext, rect: rect)
     }
     
     //正常绘制
@@ -34,6 +39,19 @@ class SimpleDraw: UIView {
         let layoutFrame = CTFramesetterCreateFrame(storage, CFRangeMake(0, dataSouce.length), path, nil)
         CTFrameDraw(layoutFrame, context)
     }
+    
+    //非矩形绘制
+    private func ellipseDraw(context: CGContext, rect: CGRect) {
+        let path = CGMutablePath(rect: rect, transform: nil)
+        let radius: CGFloat = 60 //min(rect.size.width, rect.size.height) 
+        let circleRect = CGRect(x: (rect.size.width - radius) / 2, y: (rect.size.height - radius) / 2, width: radius, height: radius)
+        path.addEllipse(in: circleRect)
+
+        let storage = CTFramesetterCreateWithAttributedString(dataSouce)
+        let layoutFrame = CTFramesetterCreateFrame(storage, CFRangeMake(0, dataSouce.length), path, nil)
+        CTFrameDraw(layoutFrame, context)
+    }
+    
     //逐行绘制
     private func lineDraw(context: CGContext, rect: CGRect) {
         let path = CGMutablePath()
