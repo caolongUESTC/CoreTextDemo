@@ -19,6 +19,7 @@
 		C4497B1926FDF5AE001B66B4 /* ImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1826FDF5AE001B66B4 /* ImageText.swift */; };
 		C4497B1B26FEC082001B66B4 /* TruncateDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */; };
 		C4BC449E2703262D00B87AFF /* ClickText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BC449D2703262D00B87AFF /* ClickText.swift */; };
+		C4CBBB2C2717E3CA0082368E /* AsyncText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBBB2B2717E3CA0082368E /* AsyncText.swift */; };
 		C4DE640827040A5C00B8CA2C /* TextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE640727040A5C00B8CA2C /* TextLine.swift */; };
 		C4DE65F427043DAD00B8CA2C /* MoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DE65F327043DAD00B8CA2C /* MoreText.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		C4497B1826FDF5AE001B66B4 /* ImageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageText.swift; sourceTree = "<group>"; };
 		C4497B1A26FEC082001B66B4 /* TruncateDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruncateDraw.swift; sourceTree = "<group>"; };
 		C4BC449D2703262D00B87AFF /* ClickText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickText.swift; sourceTree = "<group>"; };
+		C4CBBB2B2717E3CA0082368E /* AsyncText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncText.swift; sourceTree = "<group>"; };
 		C4DE640727040A5C00B8CA2C /* TextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLine.swift; sourceTree = "<group>"; };
 		C4DE65F327043DAD00B8CA2C /* MoreText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				C4BC449D2703262D00B87AFF /* ClickText.swift */,
 				C4DE640727040A5C00B8CA2C /* TextLine.swift */,
 				C4DE65F327043DAD00B8CA2C /* MoreText.swift */,
+				C4CBBB2B2717E3CA0082368E /* AsyncText.swift */,
 			);
 			path = CoreTextDemo;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				C4497AE926FDE7A4001B66B4 /* SceneDelegate.swift in Sources */,
 				C4497B1726FDE9F2001B66B4 /* SimpleDraw.swift in Sources */,
 				C4DE640827040A5C00B8CA2C /* TextLine.swift in Sources */,
+				C4CBBB2C2717E3CA0082368E /* AsyncText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,9 @@ import UIKit
 
 class MoreText: UIView {
     var tapMoreBlock: (() -> Void)?
+    var tapContentBlcok: (() -> Void)?
     private var drawFrame: CTFrame?
-    private var truncateTokenIndex: Int?
+    private var truncateTokenIndex: Int? 
     let moreGaping: CGFloat = 4
     var moreText: NSMutableAttributedString {
         let more = NSMutableAttributedString(string: "更多", attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue.cgColor,
@@ -23,6 +24,11 @@ class MoreText: UIView {
         str.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location: 11, length: 2))
         str.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 14), range: NSRange(location: 0, length: str.length))
         return str
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
@@ -80,6 +86,9 @@ class MoreText: UIView {
                 let truncationWidth = CTLineGetTypographicBounds(truncationLine, nil, nil, nil)
                 print ("截断前\(firstLineWidth) 截断后\(truncationWidth)")
                 LineDraw(position: lineOrigins[numberOfLines-1], context: context, line: truncationLine)
+            } else if index == numberOfLines - 1 {
+                truncateTokenIndex = Int.max
+                LineDraw(position: lineOrigins[index], context: context, line: line)
             } else {
                 LineDraw(position: lineOrigins[index], context: context, line: line)
             }
@@ -109,6 +118,8 @@ class MoreText: UIView {
         guard index >= 0, let truncateTokenIndex = truncateTokenIndex else {return} //小于零说明没有找到对应位置
         if index > truncateTokenIndex {
             tapMoreBlock?()
+        } else {
+            tapContentBlcok?()
         }
     }
 }
